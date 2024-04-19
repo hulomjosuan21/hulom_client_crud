@@ -77,14 +77,14 @@ namespace complete_csharp_crud
             _bindingSource.DataSource = _context.Clients.ToList();
         }
 
-        public void deleteCategory(int _id)
+        public void deleteClients(int _id)
         {
-            //var itemToDelete = _context.Categories.Where(q => q.Id == _id).FirstOrDefault();
+            var itemToDelete = _context.Clients.Where(q => q.Id == _id).FirstOrDefault();
 
-            //_context.Categories.Remove(itemToDelete);
-            //_context.SaveChanges();
+            _context.Clients.Remove(itemToDelete);
+            _context.SaveChanges();
 
-            //_bindingSource.DataSource = _context.Categories.ToList();
+           _bindingSource.DataSource = _context.Clients.ToList();
         }
     }
 }

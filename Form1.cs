@@ -31,7 +31,12 @@ namespace hulom_client_crud
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show($"Do to you want to delete the client ID {getSelectedId}", "Delete Confirmation", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                operation.deleteClients(getSelectedId);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
