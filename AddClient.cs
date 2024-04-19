@@ -27,5 +27,10 @@ namespace hulom_client_crud
 
             this.Close();
         }
+
+        private void AddClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

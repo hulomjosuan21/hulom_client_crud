@@ -26,7 +26,7 @@ namespace hulom_client_crud
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-
+            operation.updateClient(getSelectedId);
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -38,6 +38,17 @@ namespace hulom_client_crud
         {
             operation = new DatabaseOperation(clientBindingSource);
             clientBindingSource.DataSource = operation._con.Clients.ToList();
+        }
+
+        private int getSelectedId;
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            getSelectedId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
         }
     }
 }

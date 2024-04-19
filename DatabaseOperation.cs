@@ -55,23 +55,26 @@ namespace complete_csharp_crud
             _bindingSource.DataSource = _context.Clients.ToList();
         }
 
-        public void updateCategory(int _id)
+        public void updateClient(int _id)
         {
-            //UpdateCategory _updateCategory = new UpdateCategory(_id);
-            //_updateCategory.ShowDialog();
+            UpdateClient updateCLient = new UpdateClient(_id);
+            updateCLient.ShowDialog();
 
-            //string getText = _updateCategory.GetUpdateText;
+            string fname = updateCLient.GetAddText[0];
+            string lname = updateCLient.GetAddText[1];
+            string residency = updateCLient.GetAddText[2];
+            DateTime date = updateCLient.dateValue;
 
-            //if (!(string.IsNullOrEmpty(getText)))
-            //{
-            //    var selectedCategory = _context.Categories.Where(q => q.Id == _id).FirstOrDefault();
+            var selectedClient = _context.Clients.Where(q => q.Id == _id).FirstOrDefault();
 
-            //    selectedCategory.Name = getText;
+            selectedClient.Firstname = fname;
+            selectedClient.Lastname = lname;
+            selectedClient.Residency = residency;
+            selectedClient.Birthday = date;
 
-            //    _context.SaveChanges();
+            _context.SaveChanges();
 
-            //    _bindingSource.DataSource = _context.Categories.ToList();
-            //}
+            _bindingSource.DataSource = _context.Clients.ToList();
         }
 
         public void deleteCategory(int _id)

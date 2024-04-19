@@ -140,6 +140,7 @@ namespace hulom_client_crud
             this.Name = "AddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddClient";
+            this.Load += new System.EventHandler(this.AddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
