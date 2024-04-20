@@ -86,5 +86,34 @@ namespace complete_csharp_crud
 
            _bindingSource.DataSource = _context.Clients.ToList();
         }
+
+        public void searchClient(string text)
+        {
+            try
+            {
+                int id;
+                bool isId = int.TryParse(text, out id);
+
+                var result = _context.Clients
+                    .Where(c => (isId && c.Id == id) ||
+                                c.Firstname.Contains(text) ||
+                                c.Lastname.Contains(text) ||
+                                c.Residency.Contains(text))
+                    .Select(c => new
+                    {
+                        c.Id,
+                        c.Firstname,
+                        c.Lastname,
+                        c.Residency,
+                        c.Birthday
+                    })
+                    .ToList();
+
+                _bindingSource.DataSource = result;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

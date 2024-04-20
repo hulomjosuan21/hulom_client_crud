@@ -34,6 +34,8 @@ namespace hulom_client_crud
             this.addBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
+            this.searchBar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,17 +59,17 @@ namespace hulom_client_crud
             this.residencyDataGridViewTextBoxColumn,
             this.birthdayDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clientBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 44);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(541, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(541, 365);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(559, 12);
+            this.addBtn.Location = new System.Drawing.Point(12, 415);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
             this.addBtn.TabIndex = 1;
@@ -77,7 +79,7 @@ namespace hulom_client_crud
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(559, 41);
+            this.updateBtn.Location = new System.Drawing.Point(93, 415);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(75, 23);
             this.updateBtn.TabIndex = 2;
@@ -87,13 +89,34 @@ namespace hulom_client_crud
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(559, 70);
+            this.deleteBtn.Location = new System.Drawing.Point(174, 415);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "DELETE";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // searchBar
+            // 
+            this.searchBar.AccessibleName = "";
+            this.searchBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBar.Location = new System.Drawing.Point(78, 12);
+            this.searchBar.Name = "searchBar";
+            this.searchBar.Size = new System.Drawing.Size(156, 26);
+            this.searchBar.TabIndex = 4;
+            this.searchBar.Tag = "";
+            this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Search";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -138,7 +161,9 @@ namespace hulom_client_crud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 450);
+            this.ClientSize = new System.Drawing.Size(567, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchBar);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.addBtn);
@@ -150,6 +175,7 @@ namespace hulom_client_crud
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,6 +191,8 @@ namespace hulom_client_crud
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.TextBox searchBar;
+        private System.Windows.Forms.Label label1;
     }
 }
 

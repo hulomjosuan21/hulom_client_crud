@@ -13,7 +13,7 @@ namespace hulom_client_crud
 {
     public partial class Form1 : Form
     {
-        private DatabaseOperation operation;
+        private DatabaseOperation operation; // 4/19/2024
         public Form1()
         {
             InitializeComponent();
@@ -54,6 +54,11 @@ namespace hulom_client_crud
             }
 
             getSelectedId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+        }
+
+        private void searchBar_TextChanged(object sender, EventArgs e)
+        {
+            operation.searchClient(searchBar.Text.Trim());
         }
     }
 }
